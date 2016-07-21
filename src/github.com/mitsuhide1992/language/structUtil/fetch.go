@@ -1,4 +1,4 @@
-package main
+package structUtil
 
 import (
 	"fmt"
@@ -22,6 +22,7 @@ func Crawl(url string, depth int, fetcher Fetcher) {
 		fmt.Println(err)
 		return
 	}
+
 	fmt.Printf("found: %s %q\n", url, body)
 	for _, u := range urls {
 		Crawl(u, depth-1, fetcher)
@@ -29,9 +30,9 @@ func Crawl(url string, depth int, fetcher Fetcher) {
 	return
 }
 
-func main() {
-	Crawl("http://golang.org/", 4, fetcher)
-}
+// func main() {
+// 	Crawl("http://golang.org/", 4, fetcher)
+// }
 
 // fakeFetcher 是返回若干结果的 Fetcher。
 type fakeFetcher map[string]*fakeResult

@@ -1,7 +1,7 @@
-package main
+package structUtil
 
 import (
-	"fmt"
+	// "fmt"
 	"math"
 )
 
@@ -13,7 +13,7 @@ func (v *Vertex) abs() float64 {
 	return math.Sqrt(v.X*v.X + v.Y*v.Y)
 }
 
-func main() {
-	var v = &Vertex{3, 4}
-	fmt.Println(v.abs())
-}
+// func main() {
+// 	var v = &Vertex{3, 4}
+// 	fmt.Println(v.abs())
+// }

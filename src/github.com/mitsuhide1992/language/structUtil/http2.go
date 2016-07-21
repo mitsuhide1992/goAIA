@@ -1,8 +1,8 @@
-package main
+package structUtil
 
 import (
 	"fmt"
-	"log"
+	// "log"
 	"net/http"
 )
 
@@ -15,16 +15,16 @@ type zStruct struct {
 }
 
 func (zs zString) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "<button>zlu</button>")
+	fmt.Fprint(w, zs)
 }
 
 func (zs *zStruct) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, zs.when, zs.where, zs.who)
 }
 
-func main() {
-	// your http.Handle calls here
-	http.Handle("/string", zString("I'm a frayed knot."))
-	http.Handle("/struct", &zStruct{"Hello", ":", "Gophers!"})
-	log.Fatal(http.ListenAndServe("localhost:4000", nil))
-}
+// func main() {
+// 	// your http.Handle calls here
+// 	http.Handle("/string", zString("I'm a frayed knot."))
+// 	http.Handle("/struct", &zStruct{"Hello", ":", "Gophers!"})
+// 	log.Fatal(http.ListenAndServe("localhost:4000", nil))
+// }

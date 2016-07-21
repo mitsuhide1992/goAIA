@@ -1,6 +1,6 @@
-package main
+package grammar
 
-import "fmt"
+// import "fmt"
 
 // fibonacci 函数会返回一个返回 int 的函数。
 // fibonacci 只会调用一次，返回的是闭包函数，之后每次调用f都是调用闭包函数
@@ -25,9 +25,9 @@ func fibonacci() func() int {
 	}
 }
 
-func main() {
-	f := fibonacci()
-	for i := 0; i < 10; i++ {
-		fmt.Println(f())
-	}
-}
+// func main() {
+// 	f := fibonacci()
+// 	for i := 0; i < 10; i++ {
+// 		fmt.Println(f())
+// 	}
+// }
